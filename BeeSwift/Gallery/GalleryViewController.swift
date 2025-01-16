@@ -145,7 +145,6 @@ class GalleryViewController: UIViewController {
     )
     self.view.addSubview(self.stackView)
     stackView.snp.makeConstraints { (make) -> Void in make.edges.equalToSuperview() }
-
     NotificationCenter.default.addObserver(
       self,
       selector: #selector(self.keyboardWillShow),
@@ -464,7 +463,10 @@ extension GalleryViewController: SFSafariViewControllerDelegate {
       let action = UIAlertAction(title: title, style: .default) { [weak self] _ in
         UserDefaults.standard.set(sortOption, forKey: Constants.selectedGoalSortKey)
         UserDefaults.standard.synchronize()
-        Task { self?.updateGoals() }
+        Task {
+          self?.fetchedResultsController.fetchRequest.sortDescriptors = Self.preferredSort
+          try? self?.fetchedResultsController.performFetch()
+        }
       }
       alert.addAction(action)
     }
