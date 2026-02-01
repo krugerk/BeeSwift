@@ -30,7 +30,7 @@ class GalleryViewController: UIViewController {
   private let versionManager: VersionManager
   private let goalManager: GoalManager
   private let healthStoreManager: HealthStoreManager
-  private let requestManager: RequestManager
+  private let requestManager: RequestManaging
   private lazy var stackView: UIStackView = {
     let stackView = UIStackView()
     stackView.axis = .vertical
@@ -107,7 +107,7 @@ class GalleryViewController: UIViewController {
     versionManager: VersionManager,
     goalManager: GoalManager,
     healthStoreManager: HealthStoreManager,
-    requestManager: RequestManager,
+    requestManager: RequestManaging,
     coordinator: MainCoordinator
   ) {
     self.currentUserManager = currentUserManager
