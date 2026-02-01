@@ -503,14 +503,13 @@ extension GalleryViewController: UICollectionViewDelegate {
   }
 }
 
-// MARK: - Prefetching (using AlamofireImage's ImageDownloader)
 extension GalleryViewController: UICollectionViewDataSourcePrefetching {
   func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
     let urls = indexPaths.compactMap { indexPath -> URL? in
       let goal = fetchedResultsController.object(at: indexPath)
       return try? goal.thumbUrl.asURL()
     }
-    let downloader = ImageDownloader.default
+    let downloader = ImageDownloadService.shared.downloader
     urls.forEach { downloader.download(URLRequest(url: $0), completion: { _ in }) }
   }
 }
