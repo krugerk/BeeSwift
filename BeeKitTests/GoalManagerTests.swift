@@ -6,22 +6,10 @@ import XCTest
 @testable import BeeKit
 
 class MockRequestManager: RequestManaging {
-  func addDatapoint(urtext: String, slug: String, requestId: String?) async throws -> Any? {
-    nil
-  }
-  
-  func delete(url: String, parameters: [String : Any]?) async throws -> Any? {
-    nil
-  }
-  
-  func post(url: String, parameters: [String : Any]?) async throws -> Any? {
-    nil
-  }
-  
-  func put(url: String, parameters: [String : Any]?) async throws -> Any? {
-    nil
-  }
-  
+  func addDatapoint(urtext: String, slug: String, requestId: String?) async throws -> Any? { nil }
+  func delete(url: String, parameters: [String: Any]?) async throws -> Any? { nil }
+  func post(url: String, parameters: [String: Any]?) async throws -> Any? { nil }
+  func put(url: String, parameters: [String: Any]?) async throws -> Any? { nil }
   var responses: [String: Any] = [:]
   func get(url: String, parameters: [String: Any]? = nil) async throws -> Any? {
     if let response = responses[url] { return response }
