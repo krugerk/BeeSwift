@@ -18,10 +18,7 @@ class MockHealthKitDataPoint: BeeDataPoint {
 }
 
 class MockRequestManagerForDataPoint: RequestManaging {
-  func post(url: String, parameters: [String : Any]?) async throws -> Any? {
-    nil
-  }
-  
+  func post(url: String, parameters: [String: Any]?) async throws -> Any? { nil }
   private let queue = DispatchQueue(label: "com.beeminder.MockRequestManagerForDataPoint")
   private var _responses: [String: Any] = [:]
   private var _putCalls: [(url: String, parameters: [String: Any])] = []
