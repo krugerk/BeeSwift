@@ -17,9 +17,9 @@ class ChooseHKMetricViewController: UIViewController {
   fileprivate var tableView = UITableView()
   let goal: Goal
   private let healthStoreManager: HealthStoreManager
-  private let requestManager: RequestManager
+  private let requestManager: RequestManaging
   private weak var coordinator: MainCoordinator?
-  init(goal: Goal, healthStoreManager: HealthStoreManager, requestManager: RequestManager, coordinator: MainCoordinator)
+  init(goal: Goal, healthStoreManager: HealthStoreManager, requestManager: RequestManaging, coordinator: MainCoordinator)
   {
     self.goal = goal
     self.healthStoreManager = healthStoreManager
