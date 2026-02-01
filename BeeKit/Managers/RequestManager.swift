@@ -34,7 +34,7 @@ public enum ServerError: LocalizedError {
   }
 }
 
-public class RequestManager {
+public actor RequestManager {
   public let baseURLString = Config().baseURLString
   private let logger = Logger(subsystem: "com.beeminder.beeminder", category: "RequestManager")
   func rawRequest(url: String, method: HTTPMethod, parameters: [String: Any]? = nil, headers: HTTPHeaders) async throws
