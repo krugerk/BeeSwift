@@ -48,7 +48,7 @@ extension Goal {
     return cacheBustingUrlStr
   }
 
-  public func capitalSafesum() -> String { return self.safeSum.prefix(1).uppercased() + self.safeSum.dropFirst(1) }
+  public func capitalSafesum() -> String { return self.safeSum.capitalizingFirstCharacter }
 
   public var countdownColor: UIColor { return UIColor.Beeminder.SafetyBuffer.color(for: self.colorkey) }
 
