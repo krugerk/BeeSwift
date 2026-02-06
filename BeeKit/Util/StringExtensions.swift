@@ -1,6 +1,6 @@
 // Part of BeeSwift. Copyright Beeminder
 
-extension String {
+extension StringProtocol {
   /// capitalize only the first character of a string
   var capitalizingFirstCharacter: String {
     guard let first = self.first else { return "" }
