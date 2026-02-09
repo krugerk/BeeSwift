@@ -3,14 +3,15 @@ import UIKit
 
 extension Goal {
   public var humanizedAutodata: String? {
-    if self.autodata == "ifttt" { return "IFTTT" }
-    if self.autodata == "api" { return "API" }
-    if self.autodata == "apple" {
+    guard let autodata, !autodata.isEmpty else { return nil }
+    switch autodata {
+    case "ifttt": return "IFTTT"
+    case "api": return "API"
+    case "apple":
       let metric = HealthKitConfig.metrics.first(where: { $0.databaseString == self.healthKitMetric })
       return self.healthKitMetric == nil ? "Apple" : metric?.humanText
+    default: return autodata.capitalized
     }
-    if let autodata = self.autodata, autodata.count > 0 { return autodata.capitalized }
-    return nil
   }
 
   public var isDataProvidedAutomatically: Bool { return !(self.autodata ?? "").isEmpty }
