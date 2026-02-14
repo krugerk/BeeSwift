@@ -8,7 +8,7 @@ import OSLog
 /// Handles placeholders for loading and queued states, and automatically updates when the goal changes
 class GoalImageView: UIView {
   private static let downloader = ImageDownloader(imageCache: AutoPurgingImageCache())
-  private let logger = Logger(subsystem: "com.beeminder.com", category: "GoalImageView")
+  private let logger = Logger(subsystem: "com.beeminder.beeminder", category: "GoalImageView")
 
   private let imageView = UIImageView()
   private let beeLemniscateView = BeeLemniscateView()
