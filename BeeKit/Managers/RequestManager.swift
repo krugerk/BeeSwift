@@ -36,7 +36,8 @@ public actor RequestManager {
       headers: HTTPHeaders.default + headers
     ).validate().serializingData(emptyRequestMethods: [HTTPMethod.post]).response
     switch response.result {
-    case .success(let data): return try await Task.detached { try JSONSerialization.jsonObject(with: data) }.value
+    case .success(let data):
+      return try await Task.detached(priority: .low) { try JSONSerialization.jsonObject(with: data) }.value
     case .failure(let error):
       logger.error("Error issuing request \(url): \(error, privacy: .public)")
       // Log out the user on an unauthorized response
