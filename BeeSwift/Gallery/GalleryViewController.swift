@@ -509,7 +509,7 @@ extension GalleryViewController: UICollectionViewDataSourcePrefetching {
       let goal = fetchedResultsController.object(at: indexPath)
       return try? goal.thumbUrl.asURL()
     }
-    let downloader = ImageDownloadService.shared.downloader
+    let downloader = ServiceLocator.imageDownloader
     urls.forEach { downloader.download(URLRequest(url: $0), completion: { _ in }) }
   }
 }

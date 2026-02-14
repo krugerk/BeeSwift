@@ -6,6 +6,7 @@
 //  Copyright 2023 APB. All rights reserved.
 //
 
+import AlamofireImage
 import Foundation
 import OSLog
 
@@ -36,4 +37,6 @@ public class ServiceLocator {
     goalManager: goalManager,
     container: persistentContainer
   )
+
+  public static let imageDownloader = ImageDownloadService.shared.downloader
 }
