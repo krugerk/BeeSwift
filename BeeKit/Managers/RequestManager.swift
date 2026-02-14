@@ -27,7 +27,7 @@ public actor RequestManager {
       }
       urlWithSubstitutions = urlWithSubstitutions.replacingOccurrences(of: "{username}", with: username)
     }
-    let encoding: ParameterEncoding = if method == .get { URLEncoding.default } else { JSONEncoding.default }  // TODO
+    let encoding: ParameterEncoding = method == .get ? URLEncoding.default : JSONEncoding.default
     let response = await AF.request(
       "\(baseURLString)/\(urlWithSubstitutions)",
       method: method,
