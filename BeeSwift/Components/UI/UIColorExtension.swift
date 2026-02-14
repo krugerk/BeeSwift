@@ -33,7 +33,6 @@ extension UIColor {
         }
       }
       public static let gray: UIColor = .systemGray
-
       public static func color(for colorkey: String) -> UIColor {
         switch colorkey {
         case "red": return red

@@ -1,5 +1,4 @@
 import Foundation
-import UIKit
 
 extension Goal {
   public var humanizedAutodata: String? {
@@ -50,8 +49,6 @@ extension Goal {
   }
 
   public func capitalSafesum() -> String { return self.safeSum.capitalizingFirstCharacter }
-
-  public var countdownColor: UIColor { return UIColor.Beeminder.SafetyBuffer.color(for: self.colorkey) }
 
   public var hideDataEntry: Bool { return self.isDataProvidedAutomatically || self.won }
 
