@@ -5,13 +5,14 @@ import XCTest
 
 @testable import BeeKit
 
-class MockRequestManager: RequestManager {
-  var responses: [String: Any] = [:]
-  override func get(url: String, parameters: [String: Any]? = nil) async throws -> Any? {
-    if let response = responses[url] { return response }
-    XCTFail("Unexpected URL requested: \(url)")
+class MockRequestManager: RequestManaging {
+  func request(endpoint: BeeKit.EndPoint) async throws -> Any? {
+    if let response = responses[endpoint.url.absoluteString] { return response }
+    XCTFail("Unexpected URL requested: \(endpoint.url.absoluteString)")
     return nil
   }
+  
+  var responses: [String: Any] = [:]
 }
 
 class GoalManagerTests: XCTestCase {
