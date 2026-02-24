@@ -11,7 +11,6 @@ class MockRequestManager: RequestManaging {
     XCTFail("Unexpected URL requested: \(endpoint.url.absoluteString)")
     return nil
   }
-  
   var responses: [String: Any] = [:]
 }
 
