@@ -10,7 +10,7 @@ import Foundation
 import OSLog
 
 public class ServiceLocator {
-  private static let logger = Logger(subsystem: "com.beeminder.beeminder", category: "ServiceLocationm")
+  private static let logger = Logger(subsystem: "com.beeminder.beeminder", category: "ServiceLocator")
 
   public static let persistentContainer = BeeminderPersistentContainer.create()
 

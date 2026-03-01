@@ -23,7 +23,7 @@ class GoalViewController: UIViewController, UIScrollViewDelegate, DatapointTable
   let sideMargin = 10
   let buttonHeight = 42
 
-  private let logger = Logger(subsystem: "com.beeminder.com", category: "GoalViewController")
+  private let logger = Logger(subsystem: "com.beeminder.beeminder", category: "GoalViewController")
 
   let goal: Goal
   private let healthStoreManager: HealthStoreManager

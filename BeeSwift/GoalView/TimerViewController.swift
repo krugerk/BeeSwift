@@ -131,7 +131,7 @@ class TimerViewController: UIViewController {
     self.updateTimerLabel()
   }
   func urtext() -> String {
-    let urtextDaystamp = Daystamp.makeUrtextDaystamp(submissionDate: Date(), goal: goal)
+    let urtextDaystamp = Daystamp.makeUrtextDaystamp(submissionDate: Date(), deadline: goal.deadline)
     let value: Double
 
     switch self.units {

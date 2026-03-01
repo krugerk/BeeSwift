@@ -1,6 +1,5 @@
 import CoreData
 import OSLog
-import UIKit
 
 public class BeeminderPersistentContainer: NSPersistentContainer, @unchecked Sendable {
   private static let logger = Logger(subsystem: "com.beeminder.beeminder", category: "BeeminderPersistentContainer")
