@@ -6,7 +6,7 @@ import XCTest
 @testable import BeeKit
 
 class MockRequestManager: RequestManaging {
-  func request(endpoint: BeeKit.EndPoint) async throws -> Any? {
+  func request(endpoint: BeeKit.Endpoint) async throws -> Any? {
     if let response = responses[endpoint.url.absoluteString] { return response }
     XCTFail("Unexpected URL requested: \(endpoint.url.absoluteString)")
     return nil
