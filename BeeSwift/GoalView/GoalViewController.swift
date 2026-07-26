@@ -602,7 +602,7 @@ extension GoalViewController {
         tab: tab,
         username: username,
         goalName: goalName,
-        accessToken: accessToken
+        accessToken: accessToken,
       )
     }
   }
